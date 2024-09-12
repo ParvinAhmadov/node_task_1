@@ -168,29 +168,29 @@ export default function Home() {
             <div className="flex p-3 rounded-md bg-blue-100 text-blue-500 justify-center items-center">
               <h1 className="text-xl font-bold">No data</h1>
             </div>
-          )}
-          <div className="flex flex-row my-5 justify-center flex-wrap gap-4">
+          )} 
+          <div className="flex flex-row my-5 justify-center  rounded-2xl flex-wrap gap-4">
             {data.map((todo: any, idx: number) => (
               <div
-                className="max-w-[300px] p-4 w-full shadow-lg rounded-md bg-white"
+                className="max-w-[400px] p-4 w-full border-2 shadow-lg bg-white border-[#308E87] rounded-xl"
                 key={idx}
               >
                 <h1 className="text-md font-bold max-w-[200px] line-clamp-2">
                   {todo.title}
                 </h1>
                 <p className="text-sm max-w-[300px]">{todo.description}</p>
-                <div className="flex flex-col gap-2">
-                  <div className="text-sm">Status: <span className={CheckStatus(todo.status)}>{todo.status}</span></div>
+                <div className="flex flex-col gap-2 mt-2">
+                  <div className="text-sm p-2">Status: <span className={CheckStatus(todo.status)}>{todo.status}</span></div>
                   <div className="text-sm">Issues: {todo.issues}</div>
                   <div className="text-sm">Resolved: {todo.resolved}</div>
                   <div className="text-sm">Comments: {todo.comment}</div>
-                  <div className="text-sm">Progress: {todo.progress}%</div>
+                  <div className="text-sm border-2 p-2 rounded-2xl border-[#308E87]">Progress: {todo.progress}%</div>
                 </div>
                 <div className="flex justify-start items-center gap-2 mt-3">
                   <button
                     onClick={() => handleDelete(todo?._id)}
                     disabled={deleteMutating}
-                    className="bg-red-100 disabled:bg-gray-300 disabled:cursor-not-allowed text-red-600 rounded-md p-3"
+                    className="bg-red-600 disabled:bg-gray-300 disabled:cursor-not-allowed text-white rounded-md p-2"
                   >
                     Delete
                   </button>
